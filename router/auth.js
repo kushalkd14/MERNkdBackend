@@ -14,7 +14,8 @@ const body = require('body-parser');
 router.use(
     cors({
         credentials: true,
-        origin: 'http://localhost:3000'
+        origin: 'https://mernwebkd.vercel.app',
+        methods:[GET,POST]
     })
 )
 router.get('/', (req, res) => {
