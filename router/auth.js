@@ -14,8 +14,7 @@ const body = require('body-parser');
 router.use(
     cors({
         credentials: true,
-        origin: process.env.BASE_URL || 5000,
-        methods:[GET,POST]
+        origin: process.env.BASE_URL || 5000
     })
 )
 router.get('/', (req, res) => {
