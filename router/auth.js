@@ -14,7 +14,7 @@ const body = require('body-parser');
 router.use(
     cors({
         credentials: true,
-        origin: process.env.BASE_URL || 5000
+        origin: 'https://mernkd.netlify.app/'
     })
 )
 router.get('/', (req, res) => {
