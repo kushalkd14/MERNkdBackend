@@ -96,7 +96,9 @@ router.post('/Login', async (req, res) => {
             
             const jtoken=res.cookie('jwttoken',token,{
                 expires: new Date(Date.now()+ 25000000000),
-                httpOnly: true
+                httpOnly: true,
+                secure: "false",
+                sameSite: "none"   
             });
             console.log(jtoken);
             const isMatch = await bcrypt.compare(password, userExist.password);
