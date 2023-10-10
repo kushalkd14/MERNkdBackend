@@ -19,7 +19,21 @@ router.use(
 )
 router.get('/', (req, res) => {
 
-    res.send("hello home router page");
+    res.send("https://mernkd.netlify.app/");
+
+})
+router.get('/login', (req, res) => {
+
+    res.send("https://mernkd.netlify.app/login");
+})
+router.get('/signup', (req, res) => {
+
+    res.send("https://mernkd.netlify.app/signup");
+
+})
+router.get('/contact', (req, res) => {
+
+    res.send("https://mernkd.netlify.app/contact");
 
 })
 router.post('/Signup', async (req, res) => {
