@@ -14,13 +14,27 @@ const body = require('body-parser');
 router.use(
     cors({
         credentials: true,
-        origin: process.env.BASE_URL,
+        origin: [process.env.BASE_URL, "https://mern-kd-app.onrender.com"],
         methods:[GET,POST]
     })
 )
 router.get('/', (req, res) => {
 
-    res.send("hello home router page");
+    res.send("https://mernkd.netlify.app/");
+
+})
+router.get('/login', (req, res) => {
+
+    res.send("https://mernkd.netlify.app/login");
+})
+router.get('/signup', (req, res) => {
+
+    res.send("https://mernkd.netlify.app/signup");
+
+})
+router.get('/contact', (req, res) => {
+
+    res.send("https://mernkd.netlify.app/contact");
 
 })
 router.post('/Signup', async (req, res) => {
