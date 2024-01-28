@@ -14,27 +14,26 @@ const body = require('body-parser');
 router.use(
     cors({
         credentials: true,
-        origin: [process.env.BASE_URL, "https://mern-kd-app.onrender.com"],
-        methods:[GET,POST]
+        origin: 'https://mernkd.netlify.app'
     })
 )
 router.get('/', (req, res) => {
 
-    res.send("https://mernkd.netlify.app/");
+    res.redirect("https://mernkd.netlify.app/");
 
 })
 router.get('/login', (req, res) => {
 
-    res.send("https://mernkd.netlify.app/login");
+    res.redirect("https://mernkd.netlify.app/login");
 })
 router.get('/signup', (req, res) => {
 
-    res.send("https://mernkd.netlify.app/signup");
+    res.redirect("https://mernkd.netlify.app/signup");
 
 })
 router.get('/contact', (req, res) => {
 
-    res.send("https://mernkd.netlify.app/contact");
+    res.redirect("https://mernkd.netlify.app/contact");
 
 })
 router.post('/Signup', async (req, res) => {
@@ -97,7 +96,9 @@ router.post('/Login', async (req, res) => {
             
             const jtoken=res.cookie('jwttoken',token,{
                 expires: new Date(Date.now()+ 25000000000),
-                httpOnly: true
+                httpOnly: true,
+                secure: "false",
+                sameSite: "none"   
             });
             console.log(jtoken);
             const isMatch = await bcrypt.compare(password, userExist.password);
