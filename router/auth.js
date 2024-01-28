@@ -14,26 +14,26 @@ const body = require('body-parser');
 router.use(
     cors({
         credentials: true,
-        origin: 'https://mernkd.netlify.app'
+        origin: 'https://mer-nkd-frontendkd.vercel.app'
     })
 )
 router.get('/', (req, res) => {
 
-    res.redirect("https://mernkd.netlify.app/");
+    res.redirect("https://mer-nkd-frontendkd.vercel.app/");
 
 })
 router.get('/login', (req, res) => {
 
-    res.redirect("https://mernkd.netlify.app/login");
+    res.redirect("https://mer-nkd-frontendkd.vercel.app/login");
 })
 router.get('/signup', (req, res) => {
 
-    res.redirect("https://mernkd.netlify.app/signup");
+    res.redirect("https://mer-nkd-frontendkd.vercel.app/signup");
 
 })
 router.get('/contact', (req, res) => {
 
-    res.redirect("https://mernkd.netlify.app/contact");
+    res.redirect("https://mer-nkd-frontendkd.vercel.app/contact");
 
 })
 router.post('/Signup', async (req, res) => {
